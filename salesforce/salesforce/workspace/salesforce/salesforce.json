@@ -1,5 +1,5 @@
 {
-    "content": "[{\"id\":\"hdL5eeXgT5\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Salesman Dashboard</b>\",\"col\":12}},{\"id\":\"pnc1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Planned Calls Today\",\"col\":4}},{\"id\":\"pnc2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Completed Activities Today\",\"col\":4}},{\"id\":\"hdr2\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Activity Tracking</b>\",\"col\":12}},{\"id\":\"scut1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity\",\"col\":4}},{\"id\":\"scut2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Master Coverage Plan\",\"col\":4}},{\"id\":\"hdr3\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Reports</b>\",\"col\":12}},{\"id\":\"scut3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Activities Summary\",\"col\":4}},{\"id\":\"scut4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Planned Calls Status\",\"col\":4}}]",
+    "content": "[{\"id\":\"hdL5eeXgT5\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Salesman Dashboard</b>\",\"col\":12}},{\"id\":\"pnc1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Planned Calls Today\",\"col\":4}},{\"id\":\"pnc2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Completed Activities Today\",\"col\":4}},{\"id\":\"hdr2\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Activity Tracking</b>\",\"col\":12}},{\"id\":\"scut1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity\",\"col\":4}},{\"id\":\"scut2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Master Coverage Plan\",\"col\":4}},{\"id\":\"hdr3\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Reports</b>\",\"col\":12}},{\"id\":\"scut3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Activities Summary\",\"col\":4}},{\"id\":\"scut4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Planned Calls Status\",\"col\":4}},{\"id\":\"scut5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity Detail\",\"col\":4}}]",
     "creation": "2026-02-28 16:00:00.000000",
     "docstatus": 0,
     "doctype": "Workspace",
@@ -56,6 +56,16 @@
             "link_type": "Report",
             "report_ref_doctype": "Salesforce Activity",
             "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Salesforce Activity Detail",
+            "link_count": 0,
+            "link_to": "Salesforce Activity Detail",
+            "link_type": "Report",
+            "report_ref_doctype": "Salesforce Activity",
+            "type": "Link"
         }
     ],
     "module": "Salesforce",
@@ -91,6 +101,11 @@
         {
             "label": "Planned Calls Status",
             "link_to": "Planned Calls Status",
+            "type": "Report"
+        },
+        {
+            "label": "Salesforce Activity Detail",
+            "link_to": "Salesforce Activity Detail",
             "type": "Report"
         }
     ],
