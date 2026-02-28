@@ -7,14 +7,19 @@
     "editable_grid": 1,
     "engine": "InnoDB",
     "field_order": [
-        "subject",
         "naming_series",
+        "subject",
         "party_type",
         "party",
-        "description",
+        "party_name",
+        "column_break_1",
+        "primary_contact",
+        "primary_address",
         "activity_type",
         "sales_person",
         "start_datetime",
+        "section_break_1",
+        "description",
         "location",
         "images",
         "amended_from"
@@ -36,17 +41,41 @@
         },
         {
             "fieldname": "party_type",
-            "fieldtype": "Link",
+            "fieldtype": "Select",
             "in_list_view": 1,
             "label": "Party Type",
-            "options": "DocType"
+            "options": "Customer\nLead",
+            "reqd": 1
         },
         {
             "fieldname": "party",
             "fieldtype": "Dynamic Link",
             "in_list_view": 1,
             "label": "Party",
-            "options": "party_type"
+            "options": "party_type",
+            "reqd": 1
+        },
+        {
+            "fieldname": "party_name",
+            "fieldtype": "Data",
+            "label": "Party Name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "primary_contact",
+            "fieldtype": "Data",
+            "label": "Primary Contact",
+            "read_only": 1
+        },
+        {
+            "fieldname": "primary_address",
+            "fieldtype": "Small Text",
+            "label": "Primary Address",
+            "read_only": 1
         },
         {
             "fieldname": "description",
@@ -71,6 +100,10 @@
             "fieldname": "start_datetime",
             "fieldtype": "Datetime",
             "label": "Start Date and Time"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
         },
         {
             "fieldname": "location",

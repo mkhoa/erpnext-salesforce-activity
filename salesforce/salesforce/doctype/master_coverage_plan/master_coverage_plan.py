@@ -127,9 +127,11 @@ def _process_mcp(mcp_doc, current_date, current_weekday, week_of_month, month_of
 			)
 			continue
 
+		customer_name = frappe.db.get_value("Customer", row.customer, "customer_name") or row.customer
+
 		frappe.get_doc({
 			"doctype": "Salesforce Activity",
-			"subject": f"Planned Call for {row.customer}",
+			"subject": f"Planned Call for {customer_name}",
 			"activity_type": "Planned Call",
 			"party_type": "Customer",
 			"party": row.customer,
