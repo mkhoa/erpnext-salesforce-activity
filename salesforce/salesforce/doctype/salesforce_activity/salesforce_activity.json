@@ -1,168 +1,179 @@
 {
- "actions": [],
- "allow_rename": 1,
- "autoname": "naming_series:",
- "creation": "2026-02-28 12:41:32.995969",
- "doctype": "DocType",
- "editable_grid": 1,
- "engine": "InnoDB",
- "field_order": [
-  "naming_series",
-  "subject",
-  "party_type",
-  "party",
-  "party_name",
-  "column_break_1",
-  "primary_contact",
-  "primary_address",
-  "activity_type",
-  "sales_person",
-  "start_datetime",
-  "section_break_1",
-  "description",
-  "location",
-  "images",
-  "amended_from"
- ],
- "fields": [
-  {
-   "fieldname": "naming_series",
-   "fieldtype": "Select",
-   "label": "Naming Series",
-   "options": "SACT-.YYYY.-.#####",
-   "reqd": 1
-  },
-  {
-   "fieldname": "subject",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Subject",
-   "reqd": 1
-  },
-  {
-   "fieldname": "party_type",
-   "fieldtype": "Select",
-   "label": "Party Type",
-   "options": "Customer\nLead",
-   "reqd": 1
-  },
-  {
-   "fieldname": "party",
-   "fieldtype": "Dynamic Link",
-   "in_list_view": 1,
-   "label": "Party",
-   "options": "party_type",
-   "reqd": 1
-  },
-  {
-   "fieldname": "party_name",
-   "fieldtype": "Data",
-   "in_list_view": 1,
-   "label": "Party Name",
-   "read_only": 1
-  },
-  {
-   "fieldname": "column_break_1",
-   "fieldtype": "Column Break"
-  },
-  {
-   "fieldname": "primary_contact",
-   "fieldtype": "Data",
-   "label": "Primary Contact",
-   "read_only": 1
-  },
-  {
-   "fieldname": "primary_address",
-   "fieldtype": "Small Text",
-   "label": "Primary Address",
-   "read_only": 1
-  },
-  {
-   "fieldname": "description",
-   "fieldtype": "Small Text",
-   "label": "Description"
-  },
-  {
-   "default": "Call",
-   "fieldname": "activity_type",
-   "fieldtype": "Select",
-   "in_list_view": 1,
-   "label": "Activity Type",
-   "options": "Planned Call\nCall\nMeeting\nTask\nEmail"
-  },
-  {
-   "fieldname": "sales_person",
-   "fieldtype": "Link",
-   "in_list_view": 1,
-   "in_standard_filter": 1,
-   "label": "Sales Person",
-   "options": "Sales Person"
-  },
-  {
-   "fieldname": "start_datetime",
-   "fieldtype": "Datetime",
-   "in_standard_filter": 1,
-   "label": "Start Date and Time"
-  },
-  {
-   "fieldname": "section_break_1",
-   "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "location",
-   "fieldtype": "Geolocation",
-   "label": "Location",
-   "read_only": 1
-  },
-  {
-   "fieldname": "images",
-   "fieldtype": "Table",
-   "label": "Images",
-   "no_copy": 1,
-   "options": "Salesforce Activity Image"
-  },
-  {
-   "fieldname": "amended_from",
-   "fieldtype": "Link",
-   "label": "Amended From",
-   "no_copy": 1,
-   "options": "Salesforce Activity",
-   "print_hide": 1,
-   "read_only": 1,
-   "search_index": 1
-  }
- ],
- "grid_page_length": 50,
- "index_web_pages_for_search": 1,
- "is_submittable": 1,
- "links": [],
- "modified": "2026-02-28 20:49:12.187459",
- "modified_by": "Administrator",
- "module": "Salesforce",
- "name": "Salesforce Activity",
- "naming_rule": "By \"Naming Series\" field",
- "owner": "Administrator",
- "permissions": [
-  {
-   "amend": 1,
-   "cancel": 1,
-   "create": 1,
-   "delete": 1,
-   "email": 1,
-   "export": 1,
-   "print": 1,
-   "read": 1,
-   "report": 1,
-   "role": "System Manager",
-   "share": 1,
-   "submit": 1,
-   "write": 1
-  }
- ],
- "row_format": "Dynamic",
- "rows_threshold_for_grid_search": 20,
- "sort_field": "modified",
- "sort_order": "DESC",
- "states": [],
- "title_field": "subject"
+    "actions": [],
+    "allow_rename": 1,
+    "autoname": "naming_series:",
+    "creation": "2026-02-28 12:41:32.995969",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "naming_series",
+        "status",
+        "subject",
+        "party_type",
+        "party",
+        "party_name",
+        "column_break_1",
+        "primary_contact",
+        "primary_address",
+        "activity_type",
+        "sales_person",
+        "start_datetime",
+        "section_break_1",
+        "description",
+        "location",
+        "images",
+        "amended_from"
+    ],
+    "fields": [
+        {
+            "fieldname": "naming_series",
+            "fieldtype": "Select",
+            "label": "Naming Series",
+            "options": "SACT-.YYYY.-.#####",
+            "reqd": 1
+        },
+        {
+            "fieldname": "status",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Status",
+            "options": "Draft\nOpen\nClosed\nCancelled",
+            "default": "Draft",
+            "read_only": 1
+        },
+        {
+            "fieldname": "subject",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Subject",
+            "reqd": 1
+        },
+        {
+            "fieldname": "party_type",
+            "fieldtype": "Select",
+            "label": "Party Type",
+            "options": "Customer\nLead",
+            "reqd": 1
+        },
+        {
+            "fieldname": "party",
+            "fieldtype": "Dynamic Link",
+            "in_list_view": 1,
+            "label": "Party",
+            "options": "party_type",
+            "reqd": 1
+        },
+        {
+            "fieldname": "party_name",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Party Name",
+            "read_only": 1
+        },
+        {
+            "fieldname": "column_break_1",
+            "fieldtype": "Column Break"
+        },
+        {
+            "fieldname": "primary_contact",
+            "fieldtype": "Data",
+            "label": "Primary Contact",
+            "read_only": 1
+        },
+        {
+            "fieldname": "primary_address",
+            "fieldtype": "Small Text",
+            "label": "Primary Address",
+            "read_only": 1
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Small Text",
+            "label": "Description"
+        },
+        {
+            "default": "Call",
+            "fieldname": "activity_type",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Activity Type",
+            "options": "Planned Call\nCall\nMeeting\nTask\nEmail"
+        },
+        {
+            "fieldname": "sales_person",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "in_standard_filter": 1,
+            "label": "Sales Person",
+            "options": "Sales Person"
+        },
+        {
+            "fieldname": "start_datetime",
+            "fieldtype": "Datetime",
+            "in_standard_filter": 1,
+            "label": "Start Date and Time"
+        },
+        {
+            "fieldname": "section_break_1",
+            "fieldtype": "Section Break"
+        },
+        {
+            "fieldname": "location",
+            "fieldtype": "Geolocation",
+            "label": "Location",
+            "read_only": 1
+        },
+        {
+            "fieldname": "images",
+            "fieldtype": "Table",
+            "label": "Images",
+            "no_copy": 1,
+            "options": "Salesforce Activity Image"
+        },
+        {
+            "fieldname": "amended_from",
+            "fieldtype": "Link",
+            "label": "Amended From",
+            "no_copy": 1,
+            "options": "Salesforce Activity",
+            "print_hide": 1,
+            "read_only": 1,
+            "search_index": 1
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "is_submittable": 1,
+    "links": [],
+    "modified": "2026-02-28 20:49:12.187459",
+    "modified_by": "Administrator",
+    "module": "Salesforce",
+    "name": "Salesforce Activity",
+    "naming_rule": "By \"Naming Series\" field",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "amend": 1,
+            "cancel": 1,
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "submit": 1,
+            "write": 1
+        }
+    ],
+    "row_format": "Dynamic",
+    "rows_threshold_for_grid_search": 20,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": [],
+    "title_field": "subject"
 }

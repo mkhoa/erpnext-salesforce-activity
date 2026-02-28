@@ -37,7 +37,8 @@ def generate_planned_calls():
 	return total
 
 
-DAILY_VISIT_CAP = 20
+def _get_daily_visit_cap():
+	return frappe.db.get_single_value("Salesforce Settings", "max_visits_per_day") or 20
 
 
 def _get_daily_count(sales_person, target_date, daily_counts):
@@ -57,10 +58,10 @@ def _get_daily_count(sales_person, target_date, daily_counts):
 	return daily_counts[key]
 
 
-def _find_next_available_date(row, sales_person, start_date, daily_counts, max_days_ahead=60):
+def _find_next_available_date(row, sales_person, start_date, daily_counts, daily_cap, max_days_ahead=60):
 	"""Find the next calendar date (within max_days_ahead) that:
 	1. Matches one of the customer's preferred weekdays.
-	2. The salesman has fewer than DAILY_VISIT_CAP planned calls.
+	2. The salesman has fewer than daily_cap planned calls.
 	Returns a date object or None if no slot is found within the window.
 	"""
 	# Build a set of preferred calendar.day_name values from the checkboxes
@@ -73,7 +74,7 @@ def _find_next_available_date(row, sales_person, start_date, daily_counts, max_d
 	for _ in range(max_days_ahead):
 		candidate = candidate + timedelta(days=1)
 		weekday_name = calendar.day_name[candidate.weekday()]
-		if weekday_name in preferred_days and _get_daily_count(sales_person, candidate, daily_counts) < DAILY_VISIT_CAP:
+		if weekday_name in preferred_days and _get_daily_count(sales_person, candidate, daily_counts) < daily_cap:
 			return candidate
 
 	return None  # No slot found within the window
@@ -81,6 +82,7 @@ def _find_next_available_date(row, sales_person, start_date, daily_counts, max_d
 
 def _process_mcp(mcp_doc, current_date, current_weekday, week_of_month, month_of_quarter):
 	generated_count = 0
+	daily_cap = _get_daily_visit_cap()
 	# Per-run in-memory cache: (sales_person, date_str) -> count
 	daily_counts = {}
 
@@ -117,8 +119,8 @@ def _process_mcp(mcp_doc, current_date, current_weekday, week_of_month, month_of
 
 		# Determine target date, respecting the daily cap
 		target_date = current_date
-		if _get_daily_count(mcp_doc.sales_person, target_date, daily_counts) >= DAILY_VISIT_CAP:
-			target_date = _find_next_available_date(row, mcp_doc.sales_person, current_date, daily_counts)
+		if _get_daily_count(mcp_doc.sales_person, target_date, daily_counts) >= daily_cap:
+			target_date = _find_next_available_date(row, mcp_doc.sales_person, current_date, daily_counts, daily_cap)
 
 		if target_date is None:
 			frappe.log_error(

@@ -4,6 +4,7 @@
 import frappe
 from frappe import _
 from frappe.model.document import Document
+from frappe.utils import getdate, today, date_diff
 
 class SalesforceActivity(Document):
 	def before_save(self):
@@ -40,6 +41,22 @@ class SalesforceActivity(Document):
 				contact_parts = filter(None, [lead.mobile_no, lead.phone, lead.email_id])
 				self.primary_contact = " - ".join(contact_parts) if any(contact_parts) else ""
 
+	def on_submit(self):
+		self.db_set("status", "Open")
+
+	def on_cancel(self):
+		self.db_set("status", "Cancelled")
+
+	def validate(self):
+		if self.start_datetime:
+			max_backdated_days = frappe.db.get_single_value("Salesforce Settings", "max_backdated_days") or 3
+			# Calculate difference in days between today and start_datetime date
+			days_diff = date_diff(today(), getdate(self.start_datetime))
+			if days_diff > max_backdated_days:
+				frappe.throw(
+					_("Cannot backdate posting by more than {0} days.").format(max_backdated_days),
+					title=_("Backdated Posting Not Allowed")
+				)
 
 	def before_submit(self):
 		# Require at least one image before the document can be submitted
@@ -48,3 +65,14 @@ class SalesforceActivity(Document):
 				_("Please upload at least one image before submitting this activity."),
 				title=_("Image Required")
 			)
+
+@frappe.whitelist()
+def close_activity(docname):
+	doc = frappe.get_doc("Salesforce Activity", docname)
+	if doc.docstatus != 1:
+		frappe.throw(_("Only submitted activities can be closed."))
+	if doc.status == "Closed":
+		frappe.throw(_("This activity is already closed."))
+	
+	doc.db_set("status", "Closed")
+	return "Closed"

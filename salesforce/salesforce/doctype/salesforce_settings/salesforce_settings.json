@@ -1,0 +1,46 @@
+{
+    "actions": [],
+    "creation": "2026-02-28 14:00:00.000000",
+    "doctype": "DocType",
+    "engine": "InnoDB",
+    "field_order": [
+        "max_visits_per_day",
+        "max_backdated_days"
+    ],
+    "fields": [
+        {
+            "default": "20",
+            "fieldname": "max_visits_per_day",
+            "fieldtype": "Int",
+            "label": "Maximum Visits per Salesman per Day",
+            "reqd": 1
+        },
+        {
+            "default": "3",
+            "fieldname": "max_backdated_days",
+            "fieldtype": "Int",
+            "label": "Maximum Backdated Posting Days",
+            "reqd": 1
+        }
+    ],
+    "issingle": 1,
+    "custom": 0,
+    "modified": "2026-02-28 14:00:00.000000",
+    "modified_by": "Administrator",
+    "module": "Salesforce",
+    "name": "Salesforce Settings",
+    "owner": "Administrator",
+    "permissions": [
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "print": 1,
+            "read": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "states": []
+}
