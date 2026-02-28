@@ -1,0 +1,101 @@
+{
+    "actions": [],
+    "allow_rename": 1,
+    "creation": "2026-02-28 15:16:16.507655",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "customer",
+        "monday",
+        "tuesday",
+        "wednesday",
+        "thursday",
+        "friday",
+        "saturday",
+        "sunday",
+        "visit_frequency",
+        "description"
+    ],
+    "fields": [
+        {
+            "fieldname": "customer",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "Customer",
+            "options": "Customer",
+            "reqd": 1
+        },
+        {
+            "fieldname": "monday",
+            "fieldtype": "Check",
+            "label": "Monday",
+            "default": "0"
+        },
+        {
+            "fieldname": "tuesday",
+            "fieldtype": "Check",
+            "label": "Tuesday",
+            "default": "0"
+        },
+        {
+            "fieldname": "wednesday",
+            "fieldtype": "Check",
+            "label": "Wednesday",
+            "default": "0"
+        },
+        {
+            "fieldname": "thursday",
+            "fieldtype": "Check",
+            "label": "Thursday",
+            "default": "0"
+        },
+        {
+            "fieldname": "friday",
+            "fieldtype": "Check",
+            "label": "Friday",
+            "default": "0"
+        },
+        {
+            "fieldname": "saturday",
+            "fieldtype": "Check",
+            "label": "Saturday",
+            "default": "0"
+        },
+        {
+            "fieldname": "sunday",
+            "fieldtype": "Check",
+            "label": "Sunday",
+            "default": "0"
+        },
+        {
+            "fieldname": "visit_frequency",
+            "fieldtype": "Select",
+            "in_list_view": 1,
+            "label": "Visit Frequency",
+            "options": "D1\nM1\nM2\nM4\nQ1\nQ2",
+            "reqd": 1
+        },
+        {
+            "fieldname": "description",
+            "fieldtype": "Data",
+            "in_list_view": 1,
+            "label": "Description"
+        }
+    ],
+    "grid_page_length": 50,
+    "index_web_pages_for_search": 1,
+    "istable": 1,
+    "links": [],
+    "modified": "2026-02-28 15:16:16.507655",
+    "modified_by": "Administrator",
+    "module": "Salesforce",
+    "name": "MCP Customer",
+    "owner": "Administrator",
+    "permissions": [],
+    "row_format": "Dynamic",
+    "rows_threshold_for_grid_search": 20,
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "states": []
+}

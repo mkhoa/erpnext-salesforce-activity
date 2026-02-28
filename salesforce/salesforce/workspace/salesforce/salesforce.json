@@ -1,0 +1,98 @@
+{
+    "content": "[{\"id\":\"hdL5eeXgT5\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Salesman Dashboard</b>\",\"col\":12}},{\"id\":\"pnc1\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Planned Calls Today\",\"col\":4}},{\"id\":\"pnc2\",\"type\":\"number_card\",\"data\":{\"number_card_name\":\"My Completed Activities Today\",\"col\":4}},{\"id\":\"hdr2\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Activity Tracking</b>\",\"col\":12}},{\"id\":\"scut1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity\",\"col\":4}},{\"id\":\"scut2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Master Coverage Plan\",\"col\":4}},{\"id\":\"hdr3\",\"type\":\"header\",\"data\":{\"text\":\"<b class=\\\"header-content\\\">Reports</b>\",\"col\":12}},{\"id\":\"scut3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Activities Summary\",\"col\":4}},{\"id\":\"scut4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Planned Calls Status\",\"col\":4}}]",
+    "creation": "2026-02-28 16:00:00.000000",
+    "docstatus": 0,
+    "doctype": "Workspace",
+    "for_user": "",
+    "hide_custom": 0,
+    "icon": "employee",
+    "idx": 0,
+    "is_hidden": 0,
+    "label": "Salesforce",
+    "links": [
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Salesforce Activity",
+            "link_count": 0,
+            "link_to": "Salesforce Activity",
+            "link_type": "DocType",
+            "type": "Card Break"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Salesforce Activity",
+            "link_count": 0,
+            "link_to": "Salesforce Activity",
+            "link_type": "DocType",
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 0,
+            "label": "Master Coverage Plan",
+            "link_count": 0,
+            "link_to": "Master Coverage Plan",
+            "link_type": "DocType",
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 1,
+            "label": "Daily Activities Summary",
+            "link_count": 0,
+            "link_to": "Daily Activities Summary",
+            "link_type": "Report",
+            "report_ref_doctype": "Salesforce Activity",
+            "type": "Link"
+        },
+        {
+            "hidden": 0,
+            "is_query_report": 1,
+            "label": "Planned Calls Status",
+            "link_count": 0,
+            "link_to": "Planned Calls Status",
+            "link_type": "Report",
+            "report_ref_doctype": "Salesforce Activity",
+            "type": "Link"
+        }
+    ],
+    "module": "Salesforce",
+    "modified": "2026-02-28 16:00:00.000000",
+    "modified_by": "Administrator",
+    "name": "Salesforce",
+    "owner": "Administrator",
+    "parent_page": "",
+    "public": 1,
+    "restrict_to_domain": "",
+    "roles": [],
+    "sequence_id": 99,
+    "shortcuts": [
+        {
+            "color": "Green",
+            "format": "{} Open",
+            "label": "Salesforce Activity",
+            "link_to": "Salesforce Activity",
+            "stats_filter": "[[\"Salesforce Activity\",\"docstatus\",\"=\",\"0\",false]]",
+            "type": "DocType"
+        },
+        {
+            "color": "Blue",
+            "label": "Master Coverage Plan",
+            "link_to": "Master Coverage Plan",
+            "type": "DocType"
+        },
+        {
+            "label": "Daily Activities Summary",
+            "link_to": "Daily Activities Summary",
+            "type": "Report"
+        },
+        {
+            "label": "Planned Calls Status",
+            "link_to": "Planned Calls Status",
+            "type": "Report"
+        }
+    ],
+    "title": "Salesforce"
+}

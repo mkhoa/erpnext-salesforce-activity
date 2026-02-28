@@ -2,6 +2,7 @@
 # For license information, please see license.txt
 
 import frappe
+from frappe import _
 from frappe.model.document import Document
 
 class SalesforceActivity(Document):
@@ -13,3 +14,11 @@ class SalesforceActivity(Document):
 				sales_person = frappe.db.get_value("Sales Person", {"employee": employee}, "name")
 				if sales_person:
 					self.sales_person = sales_person
+
+	def before_submit(self):
+		# Require at least one image before the document can be submitted
+		if not self.images or len(self.images) == 0:
+			frappe.throw(
+				_("Please upload at least one image before submitting this activity."),
+				title=_("Image Required")
+			)

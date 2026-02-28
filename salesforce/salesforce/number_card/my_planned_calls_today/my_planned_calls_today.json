@@ -1,0 +1,23 @@
+{
+ "creation": "2026-02-28 16:02:02.128415",
+ "currency": "VND",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "Salesforce Activity",
+ "filters_json": "[[\"Salesforce Activity\",\"activity_type\",\"=\",\"Planned Call\",false],[\"Salesforce Activity\",\"docstatus\",\"=\",\"0\",false]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 0,
+ "is_standard": 1,
+ "label": "My Planned Calls Today",
+ "modified": "2026-02-28 16:02:02.128415",
+ "modified_by": "Administrator",
+ "module": "Salesforce",
+ "name": "My Planned Calls Today",
+ "owner": "Administrator",
+ "report_function": "Sum",
+ "show_full_number": 0,
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Daily",
+ "type": "Document Type"
+}

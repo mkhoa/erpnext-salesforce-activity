@@ -148,23 +148,11 @@ app_license = "mit"
 # Scheduled Tasks
 # ---------------
 
-# scheduler_events = {
-# 	"all": [
-# 		"salesforce.tasks.all"
-# 	],
-# 	"daily": [
-# 		"salesforce.tasks.daily"
-# 	],
-# 	"hourly": [
-# 		"salesforce.tasks.hourly"
-# 	],
-# 	"weekly": [
-# 		"salesforce.tasks.weekly"
-# 	],
-# 	"monthly": [
-# 		"salesforce.tasks.monthly"
-# 	],
-# }
+scheduler_events = {
+	"daily": [
+		"salesforce.salesforce.doctype.master_coverage_plan.master_coverage_plan.generate_planned_calls"
+	]
+}
 
 # Testing
 # -------
