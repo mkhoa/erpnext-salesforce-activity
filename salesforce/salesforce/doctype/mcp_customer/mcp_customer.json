@@ -77,8 +77,6 @@
         {
             "fieldname": "sunday",
             "fieldtype": "Check",
-            "in_list_view": 1,
-            "columns": 1,
             "label": "Sunday",
             "default": "0"
         },
