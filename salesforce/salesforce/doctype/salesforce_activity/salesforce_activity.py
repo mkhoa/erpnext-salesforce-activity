@@ -17,7 +17,7 @@ class SalesforceActivity(Document):
 
 	def before_submit(self):
 		# Require at least one image before the document can be submitted
-		if not self.images or len(self.images) == 0:
+		if not self.images:
 			frappe.throw(
 				_("Please upload at least one image before submitting this activity."),
 				title=_("Image Required")
