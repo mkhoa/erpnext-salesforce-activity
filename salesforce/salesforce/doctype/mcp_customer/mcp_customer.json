@@ -29,42 +29,56 @@
         {
             "fieldname": "monday",
             "fieldtype": "Check",
+            "in_list_view": 1,
+            "columns": 1,
             "label": "Monday",
             "default": "0"
         },
         {
             "fieldname": "tuesday",
             "fieldtype": "Check",
+            "in_list_view": 1,
+            "columns": 1,
             "label": "Tuesday",
             "default": "0"
         },
         {
             "fieldname": "wednesday",
             "fieldtype": "Check",
+            "in_list_view": 1,
+            "columns": 1,
             "label": "Wednesday",
             "default": "0"
         },
         {
             "fieldname": "thursday",
             "fieldtype": "Check",
+            "in_list_view": 1,
+            "columns": 1,
             "label": "Thursday",
             "default": "0"
         },
         {
             "fieldname": "friday",
             "fieldtype": "Check",
+            "in_list_view": 1,
+            "columns": 1,
             "label": "Friday",
             "default": "0"
         },
         {
             "fieldname": "saturday",
             "fieldtype": "Check",
+            "in_list_view": 1,
+            "columns": 1,
             "label": "Saturday",
             "default": "0"
         },
         {
             "fieldname": "sunday",
             "fieldtype": "Check",
+            "in_list_view": 1,
+            "columns": 1,
             "label": "Sunday",
             "default": "0"
         },
@@ -87,7 +101,7 @@
     "index_web_pages_for_search": 1,
     "istable": 1,
     "links": [],
-    "modified": "2026-02-28 15:16:16.507655",
+    "modified": "2026-02-28 09:56:52.000000",
     "modified_by": "Administrator",
     "module": "Salesforce",
     "name": "MCP Customer",
