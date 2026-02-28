@@ -93,12 +93,14 @@
             "fieldname": "sales_person",
             "fieldtype": "Link",
             "in_list_view": 1,
+            "in_standard_filter": 1,
             "label": "Sales Person",
             "options": "Sales Person"
         },
         {
             "fieldname": "start_datetime",
             "fieldtype": "Datetime",
+            "in_standard_filter": 1,
             "label": "Start Date and Time"
         },
         {
