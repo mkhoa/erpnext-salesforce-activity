@@ -66,13 +66,25 @@ class SalesforceActivity(Document):
 				title=_("Image Required")
 			)
 
+	def update_status(self, status):
+		self.set_status(update=True, status=status)
+		self.notify_update()
+
+	def set_status(self, update=False, status=None):
+		if not status:
+			if self.docstatus == 0:
+				status = "Draft"
+			elif self.docstatus == 1:
+				status = "Open"
+			elif self.docstatus == 2:
+				status = "Cancelled"
+		
+		if update:
+			self.db_set("status", status)
+		else:
+			self.status = status
+
 @frappe.whitelist()
-def close_activity(docname):
-	doc = frappe.get_doc("Salesforce Activity", docname)
-	if doc.docstatus != 1:
-		frappe.throw(_("Only submitted activities can be closed."))
-	if doc.status == "Closed":
-		frappe.throw(_("This activity is already closed."))
-	
-	doc.db_set("status", "Closed")
-	return "Closed"
+def update_status(status, name):
+	activity = frappe.get_doc("Salesforce Activity", name)
+	activity.update_status(status)

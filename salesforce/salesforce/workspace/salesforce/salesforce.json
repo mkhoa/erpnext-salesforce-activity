@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"66aWWN0Os2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Salesforce Activity</b></span>\",\"col\":12}},{\"id\":\"scut1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity\",\"col\":4}},{\"id\":\"scut2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Master Coverage Plan\",\"col\":4}},{\"id\":\"KpqMYok_y9\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Settings\",\"col\":4}},{\"id\":\"SyYXFffVUA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"scut4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Planned Calls Status\",\"col\":4}},{\"id\":\"scut3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Activities Summary\",\"col\":4}},{\"id\":\"S1Ni2-y12S\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity Detail\",\"col\":4}}]",
+ "content": "[{\"id\":\"66aWWN0Os2\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Salesforce Activity</b></span>\",\"col\":12}},{\"id\":\"scut1\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity\",\"col\":4}},{\"id\":\"scut2\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Master Coverage Plan\",\"col\":4}},{\"id\":\"SyYXFffVUA\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Reports</b></span>\",\"col\":12}},{\"id\":\"scut4\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Planned Calls Status\",\"col\":4}},{\"id\":\"scut3\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Daily Activities Summary\",\"col\":4}},{\"id\":\"S1Ni2-y12S\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Salesforce Activity Detail\",\"col\":4}}]",
  "creation": "2026-02-28 16:00:00",
  "custom_blocks": [],
  "docstatus": 0,
@@ -55,7 +55,7 @@
    "type": "Link"
   }
  ],
- "modified": "2026-02-28 21:15:23.089506",
+ "modified": "2026-02-28 21:32:35.227940",
  "modified_by": "Administrator",
  "module": "Salesforce",
  "name": "Salesforce",

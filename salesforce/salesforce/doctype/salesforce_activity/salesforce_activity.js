@@ -20,24 +20,29 @@ frappe.ui.form.on('Salesforce Activity', {
 	},
 
 	refresh(frm) {
-		if (frm.doc.docstatus === 1 && frm.doc.status !== "Closed" && frm.doc.status !== "Cancelled") {
-			frm.add_custom_button(__('Close Activity'), () => {
-				frappe.confirm(__('Are you sure you want to close this activity?'), () => {
-					frappe.call({
-						method: 'salesforce.salesforce.doctype.salesforce_activity.salesforce_activity.close_activity',
-						args: {
-							docname: frm.doc.name
-						},
-						callback: function (r) {
-							if (!r.exc) {
-								frappe.show_alert({ message: __('Activity Closed'), indicator: 'green' });
-								frm.reload_doc();
-							}
-						}
-					});
-				});
-			}).addClass('btn-primary');
+		if (frm.doc.docstatus === 1) {
+			if (frm.doc.status !== "Closed" && frm.doc.status !== "Cancelled") {
+				frm.add_custom_button(__('Close'), () => frm.events.update_status(frm, 'Closed'), __('Status'));
+			} else if (frm.doc.status === "Closed") {
+				frm.add_custom_button(__('Re-open'), () => frm.events.update_status(frm, 'Open'), __('Status'));
+			}
 		}
+	},
+
+	update_status(frm, status) {
+		frappe.call({
+			method: 'salesforce.salesforce.doctype.salesforce_activity.salesforce_activity.update_status',
+			args: {
+				name: frm.doc.name,
+				status: status
+			},
+			callback: function (r) {
+				if (!r.exc) {
+					frappe.show_alert({ message: __('Activity ' + status), indicator: 'green' });
+					frm.reload_doc();
+				}
+			}
+		});
 	}
 });
 
